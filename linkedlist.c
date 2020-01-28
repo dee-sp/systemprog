@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 struct Book
 {
@@ -22,7 +23,7 @@ void printbook(struct Book* book)
 }
 
 
-struct Book* updateinfo (struct Book* book)
+struct Node* createnode (struct Node* node)
 {
  
  struct Node node;
@@ -39,10 +40,34 @@ struct Book* updateinfo (struct Book* book)
 int main ()
 {
  struct Node* head = NULL;
- struct Book* book;
- head = updateinfo (&book);
+ struct Node* curr = NULL;
+ struct Book* book1;
+ struct Book* book2;
+ struct Book* book3;
+
+ int count = 0;
+ head = createnode (&book1);
+ curr = head;
  
+ //for (int i=0; i<5; i++)
+//{
+ count++;
+ curr->nextnode = createnode (&book2);
+curr = 
+ printf ("%d\n", count);
+//}
+ count++;
+ curr->nextnode = createnode (&book3);
+ printf ("%d\n", count);
+
+ count++;
+ curr->nextnode = createnode (&book);
+ printf ("%d\n", count);
  
+ /*for (int i=0; i<5; i++)
+{
+ free(book);
+}*/
 
  return 0;
 }
